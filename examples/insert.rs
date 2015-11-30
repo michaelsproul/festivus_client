@@ -4,5 +4,5 @@ use festivus::Festivus;
 
 fn main() {
     let client = Festivus::new("http://localhost:3000");
-    println!("{:?}", client.insert(50, 100));
+    println!("{:?}", client.insert(50, 100, 150));
 }

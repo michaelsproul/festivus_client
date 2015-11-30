@@ -34,10 +34,10 @@ impl Festivus {
         }
     }
 
-    pub fn insert(&self, peak: i32, offpeak: i32) -> Result<(), Error> {
+    pub fn insert(&self, total: i32, hot_water: i32, solar: i32) -> Result<(), Error> {
         let client = Client::new();
         let url = format!("{}/power", self.url);
-        let body = format!("peak={}&offpeak={}", peak, offpeak);
+        let body = format!("total={}&hot_water={}&solar={}", total, hot_water, solar);
         let mut res = try!(
             client.post(&url).body(&body).header(ContentType::form_url_encoded()).send()
         );
